@@ -1,7 +1,12 @@
 <div class="large-padding">
-    <input type="text" placeholder="Nombe de la lista" class="form-control">
+    <input 
+    type="text" 
+    placeholder="Nombe de la lista" 
+    class="form-control"
+    [(ngModel)]="list.title"
+    >
     <div class="top-space">
-        <button type="button" class="btn blue light-text full-width">
+        <button type="button" class="btn blue light-text full-width" (click)="save()">
             <i class="fa fa-save"></i>
             Guardar
         </button>

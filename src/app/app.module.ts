@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
 import { environment } from './../environments/environment';
 import { routes } from './routes';
@@ -16,6 +17,7 @@ import { ListCreatorComponent } from './list/creator/list.creat.component';
 
 import { AuthService } from './services/auth.service';
 import { UserService } from './services/users.service';
+import { ListService } from './services/list.service';
 
 import { AuthGuard } from './guards/auth.guard.service';
 
@@ -29,9 +31,10 @@ import { TransferHttpCacheModule } from '@nguniversal/common';
     TransferHttpCacheModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
-    AngularFirestoreModule
+    AngularFirestoreModule,
+    FormsModule
   ],
-  providers: [AuthService, AuthGuard, UserService],
+  providers: [AuthService, AuthGuard, UserService, ListService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
