@@ -13,7 +13,6 @@ import * as firebase from 'firebase/app';
 @Injectable()
 export class AuthGuard implements CanActivate {
   constructor(private afAuth: AngularFireAuth, private router: Router) {}
-
   canActivate(): Observable<boolean> {
     return this.afAuth.authState.pipe(
       take(1),

@@ -18,7 +18,6 @@ export class AuthService {
       take(1),
       filter(user => !!user),
       map((user: firebase.User) => {
-        console.log('result: ', user);
         return user as IUser;
       })
     );
