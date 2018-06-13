@@ -9,25 +9,28 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 
-import { AppComponent } from './app.component';
+import { AppComponent } from './base/app.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 
 import { AuthService } from './services/auth.service';
+
+import { AuthGuard } from './guards/auth.guard.service';
 
 import { TransferHttpCacheModule } from '@nguniversal/common';
 
 @NgModule({
   declarations: [AppComponent, HomeComponent, LoginComponent],
   imports: [
-  BrowserModule.withServerTransition({ appId: 'my-app' }),
+
+BrowserModule.withServerTransition({ appId: 'my-app' }),
     RouterModule.forRoot(routes),
     TransferHttpCacheModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
     AngularFirestoreModule
   ],
-  providers: [AuthService],
+  providers: [AuthService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
