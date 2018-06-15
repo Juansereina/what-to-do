@@ -19,6 +19,8 @@ import { ListComponent } from './list/list.component';
 import { AuthService } from './services/auth.service';
 import { UserService } from './services/users.service';
 import { ListService } from './services/list.service';
+import { TodoService } from './services/todos.service';
+
 import { TodoCreatorComponent } from './todos/creator/todos.creator.component';
 
 import { AuthGuard } from './guards/auth.guard.service';
@@ -35,7 +37,7 @@ import { TransferHttpCacheModule } from '@nguniversal/common';
     TodoCreatorComponent
   ],
   imports: [
-  BrowserModule.withServerTransition({ appId: 'my-app' }),
+    BrowserModule.withServerTransition({ appId: 'my-app' }),
     RouterModule.forRoot(routes),
     TransferHttpCacheModule,
     AngularFireModule.initializeApp(environment.firebase),
@@ -43,7 +45,7 @@ import { TransferHttpCacheModule } from '@nguniversal/common';
     AngularFirestoreModule,
     FormsModule
   ],
-  providers: [AuthService, AuthGuard, UserService, ListService],
+  providers: [AuthService, AuthGuard, UserService, ListService, TodoService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

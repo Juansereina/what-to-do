@@ -34,7 +34,6 @@ export class ListService {
         actions.map(a => {
           const data = a.payload.doc.data() as IList;
           const id = a.payload.doc.id;
-          console.log(data);
           return { id, ...data };
         })
       )
