@@ -2,10 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { ListService } from './../services/list.service';
 import {
   trigger,
-  state,
   style,
   transition,
-  animate
+  animate,
+  stagger,
+  query
 } from '@angular/animations';
 
 @Component({
@@ -13,20 +14,16 @@ import {
   templateUrl: './home.component.html',
   animations: [
     trigger('enterState', [
-      state(
-        'void',
-        style({
-          transform: 'translateX(-100%)',
-          opacity: 0
-        })
-      ),
-      transition(':enter', [
-        animate(
-          300,
-          style({
-            transform: 'translateX(0)',
-            opacity: 1
-          })
+      transition('* => *', [
+        query(
+          ':enter',
+          [
+            style({ transform: 'translateX(-100%)', opacity: 0 }),
+            stagger(50, [
+              animate(200, style({ transform: 'translateX(0)', opacity: 1 }))
+            ])
+          ],
+          { optional: true }
         )
       ])
     ])
@@ -35,7 +32,7 @@ import {
 export class HomeComponent implements OnInit {
   public message: string;
 
-  constructor(private listS: ListService) {}
+  constructor(public listS: ListService) {}
 
   ngOnInit() {}
 }

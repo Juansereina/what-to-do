@@ -9,4 +9,7 @@ export class TodoCardComponent implements OnInit {
   @Input() todo: ITodo;
   constructor() {}
   ngOnInit() {}
+  completed() {
+    console.log('Completed :D');
+  }
 }
