@@ -14,6 +14,7 @@ import { AppComponent } from './base/app.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { ListCreatorComponent } from './list/creator/list.creat.component';
+import { ListComponent } from './list/list.component';
 
 import { AuthService } from './services/auth.service';
 import { UserService } from './services/users.service';
@@ -24,7 +25,13 @@ import { AuthGuard } from './guards/auth.guard.service';
 import { TransferHttpCacheModule } from '@nguniversal/common';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, LoginComponent, ListCreatorComponent],
+  declarations: [
+    AppComponent,
+    HomeComponent,
+    LoginComponent,
+    ListCreatorComponent,
+    ListComponent
+  ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'my-app' }),
     RouterModule.forRoot(routes),
