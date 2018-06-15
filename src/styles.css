@@ -12,12 +12,29 @@
   float: right;
 }
 
+.text-right{
+  text-align: right;
+}
+
 .small-font {
   font-size: 0.8rem;
 }
 
 .full-width {
   width: 100%;
+}
+
+button.no-background{
+  font-size: 1em;
+  outline: 0;
+  border: 0;
+}
+.pointer{
+  cursor: pointer;
+}
+
+.no-background{
+  background: transparent;
 }
 
 .card {
@@ -56,6 +73,10 @@
 
 .top-space {
   margin-top: 1em;
+}
+
+.overflow-hidden{
+  overflow: hidden;
 }
 
 .form-control {
