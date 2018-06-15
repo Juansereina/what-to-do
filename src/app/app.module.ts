@@ -19,6 +19,7 @@ import { ListComponent } from './list/list.component';
 import { AuthService } from './services/auth.service';
 import { UserService } from './services/users.service';
 import { ListService } from './services/list.service';
+import { TodoCreatorComponent } from './todos/creator/todos.creator.component';
 
 import { AuthGuard } from './guards/auth.guard.service';
 
@@ -30,10 +31,11 @@ import { TransferHttpCacheModule } from '@nguniversal/common';
     HomeComponent,
     LoginComponent,
     ListCreatorComponent,
-    ListComponent
+    ListComponent,
+    TodoCreatorComponent
   ],
   imports: [
-    BrowserModule.withServerTransition({ appId: 'my-app' }),
+  BrowserModule.withServerTransition({ appId: 'my-app' }),
     RouterModule.forRoot(routes),
     TransferHttpCacheModule,
     AngularFireModule.initializeApp(environment.firebase),

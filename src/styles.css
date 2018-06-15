@@ -4,6 +4,10 @@
   padding: 10px 15px;
 }
 
+.lateral-padding {
+  padding: 0 8px;
+}
+
 .float-right {
   float: right;
 }
@@ -30,17 +34,17 @@
   align-items: center;
 }
 
-.card.with-badge h4{
+.card.with-badge h4 {
   grid-area: title;
 }
 
-.card.with-badge .badge{
+.card.with-badge .badge {
   grid-area: badge;
   display: flex;
   justify-content: flex-end;
 }
 
-.card.with-badge .badge span{
+.card.with-badge .badge span {
   height: 3em;
   width: 3em;
   border-radius: 50%;
@@ -63,6 +67,7 @@
   outline: 0;
   padding: 10px 15px;
   width: 100%;
+  font-size: 1em;
 }
 
 .btn {
