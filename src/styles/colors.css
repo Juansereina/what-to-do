@@ -3,6 +3,16 @@ body{
     color: #F0F0F1;
 }
 
+.card{
+    background-color: #F0F0F1;
+    color: #302D33;
+}
+
+.card.with-badge .badge span{
+    background-color: #FF5349;
+    color: #F0F0F1;
+}
+
 .blue{
     background-color: #4F80E1;
 }
