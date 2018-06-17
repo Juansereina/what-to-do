@@ -23,7 +23,9 @@ export class TodoService {
     this.collection = this.afs
       .collection('lists')
       .doc(listId)
-      .collection('todos');
+      .collection('todos', ref => {
+        return ref.where('status', '==', 0);
+      });
     this.ref = this.collection.snapshotChanges();
   }
 
