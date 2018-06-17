@@ -28,7 +28,9 @@ export class TodoService {
   }
 
   getFromList(listId: string): Observable<ITodo[]> {
-    if (!this.collection || this.listId !== listId) { this.setCollection(listId); }
+    if (!this.collection || this.listId !== listId) {
+      this.setCollection(listId);
+    }
     return this.ref.pipe(
       map(actions => {
         return actions.map(item => {
@@ -46,5 +48,12 @@ export class TodoService {
     const createdAt = firebase.firestore.FieldValue.serverTimestamp();
     todo.createdAt = createdAt;
     return this.collection.add(todo);
+  }
+  update(listId: string, todo: ITodo): Promise<void> {
+    if (!this.collection || this.listId !== listId) {
+      this.setCollection(listId);
+    }
+
+    return this.collection.doc(todo.id).update({ status: todo.status });
   }
 }

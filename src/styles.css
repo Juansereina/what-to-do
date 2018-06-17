@@ -76,14 +76,14 @@ button.no-background{
 }
 
 .todo-card::after{
-  position: absolute;
-  z-index: -1;
+  color: #18CDCA;
   content: '\f00c';
   font-family: FontAwesome;
-  top: 50%;
-  right: -2em;
   font-weight: bold;
-  color: #18CDCA;
+  position: absolute;
+  right: -2em;
+  top: 50%;
+  z-index: -1;
 }
 
 .top-space {
