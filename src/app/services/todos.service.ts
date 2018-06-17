@@ -9,7 +9,7 @@ import { ITodo } from '../structures/todos';
 
 import * as firebase from 'firebase/app';
 import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { map, share } from 'rxjs/operators';
 @Injectable()
 export class TodoService {
   private collection: AngularFirestoreCollection<ITodo>;
@@ -26,7 +26,7 @@ export class TodoService {
       .collection('todos', ref => {
         return ref.where('status', '==', 0);
       });
-    this.ref = this.collection.snapshotChanges();
+    this.ref = this.collection.snapshotChanges().pipe(share());
   }
 
   getFromList(listId: string): Observable<ITodo[]> {
