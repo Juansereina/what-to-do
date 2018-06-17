@@ -1,5 +1,7 @@
 @import './styles/defaults.css';
 @import './styles/colors.css';
+@import 'ng-pick-datetime/assets/style/picker.min.css';
+
 .large-padding {
   padding: 10px 15px;
 }

@@ -11,4 +11,5 @@ export interface ITodo {
   status: TStatus;
   description?: string;
   createdAt?: any;
+  deadline ?: any;
 }

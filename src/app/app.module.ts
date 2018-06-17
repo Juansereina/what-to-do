@@ -11,6 +11,8 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 
+import { OwlDateTimeModule, OwlNativeDateTimeModule } from 'ng-pick-datetime';
+
 import { AppComponent } from './base/app.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
@@ -48,7 +50,9 @@ import { TransferHttpCacheModule } from '@nguniversal/common';
     AngularFirestoreModule,
     FormsModule,
     BrowserModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    OwlDateTimeModule,
+    OwlNativeDateTimeModule
   ],
   providers: [AuthService, AuthGuard, UserService, ListService, TodoService],
   bootstrap: [AppComponent]

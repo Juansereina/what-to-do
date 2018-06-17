@@ -96,6 +96,12 @@
   dependencies:
     tslib "^1.9.0"
 
+"@angular/cdk@^6.2.1":
+  version "6.2.1"
+  resolved "https://registry.yarnpkg.com/@angular/cdk/-/cdk-6.2.1.tgz#6ac6e58e8557623e6615ebcb673d74bcc575641c"
+  dependencies:
+    tslib "^1.7.1"
+
 "@angular/cli@6.0.0":
   version "6.0.0"
   resolved "https://registry.yarnpkg.com/@angular/cli/-/cli-6.0.0.tgz#346b356775ddf8cdb8a9a5095b0663878eca3486"
@@ -4812,6 +4818,10 @@ next-tick@1:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/next-tick/-/next-tick-1.0.0.tgz#ca86d1fe8828169b0120208e3dc8424b9db8342c"
 
+ng-pick-datetime@^6.0.5:
+  version "6.0.5"
+  resolved "https://registry.yarnpkg.com/ng-pick-datetime/-/ng-pick-datetime-6.0.5.tgz#6b0300fc8dc2544a981157a5b5ce4a15ecafb50b"
+
 nice-try@^1.0.4:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/nice-try/-/nice-try-1.0.4.tgz#d93962f6c52f2c1558c0fbda6d512819f1efe1c4"
@@ -6915,7 +6925,7 @@ tslib@1.9.0:
   version "1.9.0"
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-1.9.0.tgz#e37a86fda8cbbaf23a057f473c9f4dc64e5fc2e8"
 
-tslib@^1.8.0, tslib@^1.8.1, tslib@^1.9.0:
+tslib@^1.7.1, tslib@^1.8.0, tslib@^1.8.1, tslib@^1.9.0:
   version "1.9.2"
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-1.9.2.tgz#8be0cc9a1f6dc7727c38deb16c2ebd1a2892988e"
 

@@ -8,6 +8,12 @@
 <div class="lateral-padding overflow-hidden" [@openClose]="formState">
     <input type="text" placeholder="¿Qué vas a hacer?" [(ngModel)]="todo.content" class="form-control" required min="3">
     <textarea placeholder="Información adicional (opcional)" class="form-control" [(ngModel)]="todo.description"></textarea>
+    
+    <div class="date-time-picker">
+        <input type="text" placeholder="Fecha límite (opcional)" [owlDateTime]="dt"  [owlDateTimeTrigger]="dt"  class="form-control" [(ngModel)]="todo.deadline" >
+   <owl-date-time #dt></owl-date-time>
+    </div>
+    
     <div class="top-space">
         <button type="button" class="btn blue light-text full-width" (click)="save()">
             <i class="fa fa-save"></i>
