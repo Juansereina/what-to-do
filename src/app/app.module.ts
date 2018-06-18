@@ -25,6 +25,7 @@ import { AuthService } from './services/auth.service';
 import { UserService } from './services/users.service';
 import { ListService } from './services/list.service';
 import { TodoService } from './services/todos.service';
+import { PushNotificationsService } from './services/push-notifications.service';
 
 import { TodoCreatorComponent } from './todos/creator/todos.creator.component';
 
@@ -52,7 +53,7 @@ const MY_MOMENT_FORMATS = {
     TodoCardComponent
   ],
   imports: [
-  BrowserModule.withServerTransition({ appId: 'my-app' }),
+BrowserModule.withServerTransition({ appId: 'my-app' }),
     RouterModule.forRoot(routes),
     TransferHttpCacheModule,
     AngularFireModule.initializeApp(environment.firebase),
@@ -71,6 +72,7 @@ const MY_MOMENT_FORMATS = {
     UserService,
     ListService,
     TodoService,
+    PushNotificationsService
    ],
   bootstrap: [AppComponent]
 })
