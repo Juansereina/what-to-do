@@ -25,7 +25,8 @@
                 "glob": "favicon.ico",
                 "input": "src",
                 "output": "/"
-              }
+              },
+              "src/manifest.json"
             ],
             "serviceWorker": true,
             "styles": [
