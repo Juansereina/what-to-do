@@ -10,6 +10,7 @@ import { AngularFireAuth } from 'angularfire2/auth';
 })
 export class AppComponent {
   constructor(public afAuth: AngularFireAuth, private router: Router) {}
+
   logout() {
     this.afAuth.auth
       .signOut()
