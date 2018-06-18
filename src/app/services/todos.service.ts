@@ -55,7 +55,6 @@ export class TodoService {
     if (!this.collection || this.listId !== listId) {
       this.setCollection(listId);
     }
-
     return this.collection.doc(todo.id).update({ status: todo.status });
   }
 }

@@ -11,7 +11,7 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 
-import { OwlDateTimeModule, OwlNativeDateTimeModule } from 'ng-pick-datetime';
+import {  OwlDateTimeModule, OwlNativeDateTimeModule} from 'ng-pick-datetime';
 
 import { AppComponent } from './base/app.component';
 import { HomeComponent } from './home/home.component';
@@ -30,6 +30,15 @@ import { TodoCreatorComponent } from './todos/creator/todos.creator.component';
 import { AuthGuard } from './guards/auth.guard.service';
 
 import { TransferHttpCacheModule } from '@nguniversal/common';
+
+const MY_MOMENT_FORMATS = {
+  parseInput: 'dd, L, LT',
+  fullPickerInput: 'dd, L, LT',
+  datePickerInput: 'dd, L, LT',
+  monthYearLabel: 'MMMM YYYY',
+  dateA11yLabel: 'LL',
+  monthYearA11yLabel: 'MMMM YYYY'
+};
 
 @NgModule({
   declarations: [
@@ -52,9 +61,15 @@ import { TransferHttpCacheModule } from '@nguniversal/common';
     BrowserModule,
     BrowserAnimationsModule,
     OwlDateTimeModule,
-    OwlNativeDateTimeModule
+    OwlNativeDateTimeModule,
   ],
-  providers: [AuthService, AuthGuard, UserService, ListService, TodoService],
+  providers: [
+    AuthService,
+    AuthGuard,
+    UserService,
+    ListService,
+    TodoService,
+   ],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

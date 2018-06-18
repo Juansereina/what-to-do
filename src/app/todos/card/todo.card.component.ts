@@ -9,6 +9,10 @@ import {
 } from '@angular/animations';
 import { TodoService } from '../../services/todos.service';
 
+import * as moment from 'moment';
+
+moment.locale('es');
+
 @Component({
   selector: 'todo-card',
   templateUrl: './todo.card.component.html',
@@ -62,7 +66,8 @@ import { TodoService } from '../../services/todos.service';
 export class TodoCardComponent implements OnInit {
   @Input() todo: ITodo;
   @Input() listId: string;
-  public press: 'up';
+  public moment =  moment;
+  public press = 'up';
   constructor(private todoS: TodoService) {}
   ngOnInit() {}
   completed() {
