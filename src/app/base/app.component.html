@@ -1,7 +1,18 @@
-<nav class="main-nav blue large-padding light-text">
+<nav class="main-nav blue large-padding light-text relative">
     <a routerLink="/">
         <span class="nav-title">What to do</span>
     </a>
+
+    <div class="notifications-window card small-padding">
+        <div *ngIf="token; else activate">
+            <p>¿Te gustaría desactivar las notificaciones push?</p>
+            <button type="button" name="button" class="blue light-text small-padding card">Desactivar</button>
+        </div>
+        <ng-template #activate>
+            <p>¿Te gustaría activar las notificaciones push?</p>
+            <button type="button" name="button" class="blue light-text small-padding card">Activar</button>
+        </ng-template>
+    </div>
 
     <div class="float-right"  *ngIf="afAuth.authState | async">
         <a href="#">

@@ -9,6 +9,7 @@ import { AngularFireAuth } from 'angularfire2/auth';
   styles: []
 })
 export class AppComponent {
+  public token = false;
   constructor(public afAuth: AngularFireAuth, private router: Router) {}
 
   logout() {
