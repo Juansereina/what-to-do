@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ServiceWorkerModule } from '@angular/service-worker';
 
 import { environment } from './../environments/environment';
 import { routes } from './routes';
@@ -51,7 +52,7 @@ const MY_MOMENT_FORMATS = {
     TodoCardComponent
   ],
   imports: [
-    BrowserModule.withServerTransition({ appId: 'my-app' }),
+  BrowserModule.withServerTransition({ appId: 'my-app' }),
     RouterModule.forRoot(routes),
     TransferHttpCacheModule,
     AngularFireModule.initializeApp(environment.firebase),
@@ -62,6 +63,7 @@ const MY_MOMENT_FORMATS = {
     BrowserAnimationsModule,
     OwlDateTimeModule,
     OwlNativeDateTimeModule,
+    environment.production ? ServiceWorkerModule.register('/ngsw-worker.js') : []
   ],
   providers: [
     AuthService,
