@@ -15,7 +15,7 @@ export class AppComponent implements OnInit {
   constructor(
     public afAuth: AngularFireAuth,
     private router: Router,
-    private pushS: PushNotificationsService
+    public pushS: PushNotificationsService
   ) {}
   ngOnInit() {
     this.token = this.pushS.getSubscription();
