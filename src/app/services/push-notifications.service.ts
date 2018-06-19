@@ -1,11 +1,20 @@
 import { Injectable } from '@angular/core';
 import * as firebase from 'firebase/app'; // brings in app in typings
 import 'firebase/messaging';
+import { Subject, Observable } from 'rxjs';
 
 @Injectable()
 export class PushNotificationsService {
   public messaging = firebase.messaging();
+  public sub = new Subject();
+  public notification = this.sub.asObservable();
 
+  watchMessage() {
+    this.messaging.onMessage(notify => {
+      console.log(notify);
+      this.sub.next(notify);
+    });
+  }
   getSubscription(): Promise<any> {
     if (!navigator) {
       return Promise.resolve(null);

@@ -149,3 +149,22 @@ button.card:active{
 .main-nav a {
   text-decoration: none;
 }
+
+.push-message{
+  background-color: white;
+  bottom: 0;
+  box-sizing: border-box;
+  color: #302D33;
+  left: 0;
+  opacity: 0;
+  padding: 10px 15px;
+  position: fixed;
+  transform: scale(0);
+  transition: all 0.2s ease-in;
+  width: 100%;
+}
+
+.push-message.visible{
+  opacity: 1;
+  transform: scale(1);
+}
