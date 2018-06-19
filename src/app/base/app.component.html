@@ -4,9 +4,9 @@
     </a>
 
     <div class="notifications-window card small-padding">
-        <div *ngIf="token; else activate">
+        <div *ngIf="(token | async) ; else activate">
             <p>¿Te gustaría desactivar las notificaciones push?</p>
-            <button type="button" name="button" class="blue light-text small-padding card pointer">Desactivar</button>
+            <button type="button" name="button" class="blue light-text small-padding card pointer" (click)="cancelPermission()" >Desactivar</button>
         </div>
         <ng-template #activate>
             <p>¿Te gustaría activar las notificaciones push?</p>
