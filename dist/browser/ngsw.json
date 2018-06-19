@@ -1,0 +1,63 @@
+{
+  "configVersion": 1,
+  "index": "/./index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "urls": [
+        "/favicon.ico",
+        "/index.html"
+      ],
+      "patterns": []
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "urls": [
+        "/assets/images/icons/icon-128x128.png",
+        "/assets/images/icons/icon-144x144.png",
+        "/assets/images/icons/icon-152x152.png",
+        "/assets/images/icons/icon-192x192.png",
+        "/assets/images/icons/icon-384x384.png",
+        "/assets/images/icons/icon-512x512.png",
+        "/assets/images/icons/icon-72x72.png",
+        "/assets/images/icons/icon-96x96.png"
+      ],
+      "patterns": []
+    }
+  ],
+  "dataGroups": [],
+  "hashTable": {
+    "/assets/images/icons/icon-128x128.png": "e9fb916dc4d5247dace7983e766e2031bbf1de73",
+    "/assets/images/icons/icon-144x144.png": "c28829b42204bbd62f609e8b9fa266f4e83ddc41",
+    "/assets/images/icons/icon-152x152.png": "e4ab8ac1f65f606088f348cad6949a8c2c4c929c",
+    "/assets/images/icons/icon-192x192.png": "731649526f9f1f67639c5a31a5c565f9ea67070f",
+    "/assets/images/icons/icon-384x384.png": "9d40962f68d4bb5bdf3040d611cf8f7cc6855301",
+    "/assets/images/icons/icon-512x512.png": "f688c0415b8fcb03c92c8f58972a39674f7affd0",
+    "/assets/images/icons/icon-72x72.png": "42c90be6dbbc995320289a3f328bc135e46c4264",
+    "/assets/images/icons/icon-96x96.png": "82d269c172a49eec68a67d3aa84dfb01d919cc61",
+    "/favicon.ico": "84161b857f5c547e3699ddfbffc6d8d737542e01",
+    "/index.html": "b6dabd79b4b4cccc24c930ac682f20e808173f18"
+  },
+  "navigationUrls": [
+    {
+      "positive": true,
+      "regex": "^\\/.*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^\\/]*\\.[^\\/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^\\/]*__[^\\/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^\\/]*__[^\\/]*\\/.*$"
+    }
+  ]
+}
