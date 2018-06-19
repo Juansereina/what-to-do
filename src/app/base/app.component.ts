@@ -20,6 +20,7 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     this.token = this.pushS.getSubscription();
     this.pushS.watchMessage();
+    this.pushS.refreshToken();
   }
 
   requestPushPermissions() {

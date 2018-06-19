@@ -10,7 +10,13 @@ export class PushNotificationsService {
   public sub = new Subject();
   public notification = this.sub.asObservable();
 
-  constructor( private uS: UserService) {}
+  constructor(private uS: UserService) {}
+
+  refreshToken() {
+    this.messaging.onTokenRefresh(() =>
+      this.messaging.getToken().then(token => this.uS.addToken(token))
+    );
+  }
 
   watchMessage() {
     this.messaging.onMessage(notify => {
@@ -52,11 +58,14 @@ export class PushNotificationsService {
     });
   }
 
-  requestPermission() {
-    return this.messaging.requestPermission().then(() => {
-      return this.messaging.getToken();
-    }).then(token => {
-      return this.uS.addToken(token);
-    });
+  requestPermission(): Promise<void> {
+    return this.messaging
+      .requestPermission()
+      .then(() => {
+        return this.messaging.getToken();
+      })
+      .then(token => {
+        return this.uS.addToken(token);
+      });
   }
 }
