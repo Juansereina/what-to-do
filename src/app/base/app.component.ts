@@ -11,6 +11,7 @@ import { PushNotificationsService } from '../services/push-notifications.service
 })
 export class AppComponent implements OnInit {
   public token: any;
+  public showPanel = false;
   constructor(
     public afAuth: AngularFireAuth,
     private router: Router,
@@ -23,13 +24,23 @@ export class AppComponent implements OnInit {
   requestPushPermissions() {
     this.token = this.pushS
       .requestPermission()
-      .then(() => this.pushS.getSubscription());
+      .then(() => {
+        this.toggleNotificationsWindow();
+        return this.pushS.getSubscription();
+      });
   }
 
   cancelPermission() {
     this.token = this.pushS
       .cancelPermission()
-      .then(() => this.pushS.getSubscription());
+      .then(() => {
+        this.toggleNotificationsWindow();
+        return this.pushS.getSubscription();
+      });
+  }
+
+  toggleNotificationsWindow() {
+    this.showPanel = !this.showPanel;
   }
 
   logout() {

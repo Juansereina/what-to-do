@@ -31,6 +31,11 @@ button.no-background, button.card{
   outline: 0;
   border: 0;
 }
+
+button.card:active{
+  opacity: 0.8;
+}
+
 .pointer{
   cursor: pointer;
 }
