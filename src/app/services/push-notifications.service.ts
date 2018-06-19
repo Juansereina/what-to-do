@@ -1,13 +1,16 @@
 import { Injectable } from '@angular/core';
-import * as firebase from 'firebase/app'; // brings in app in typings
+import * as firebase from 'firebase/app';
 import 'firebase/messaging';
-import { Subject, Observable } from 'rxjs';
+import { Subject } from 'rxjs';
+import { UserService } from './users.service';
 
 @Injectable()
 export class PushNotificationsService {
   public messaging = firebase.messaging();
   public sub = new Subject();
   public notification = this.sub.asObservable();
+
+  constructor( private uS: UserService) {}
 
   watchMessage() {
     this.messaging.onMessage(notify => {
@@ -52,6 +55,8 @@ export class PushNotificationsService {
   requestPermission() {
     return this.messaging.requestPermission().then(() => {
       return this.messaging.getToken();
+    }).then(token => {
+      return this.uS.addToken(token);
     });
   }
 }

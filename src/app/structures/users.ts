@@ -3,4 +3,5 @@ export interface IUser {
   uid: string;
   email: string;
   bio?: string;
+  tokens ?: {[token: string]: boolean};
 }
