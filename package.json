@@ -6,6 +6,7 @@
     "type": "git",
     "url": "https://github.com/Juansereina/what-to-do.git"
   },
+  "homepage": "https://juansereina.github.io/what-to-do",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -17,7 +18,9 @@
     "generate:prerender": "cd dist && node prerender",
     "webpack:server": "webpack --config webpack.server.config.js --progress --colors",
     "serve:prerender": "cd dist/browser && http-server",
-    "serve:ssr": "node dist/server/main.js"
+    "serve:ssr": "node dist/server/main.js",
+    "deploy": "gh-pages -d /dist/browser -b master",
+    "predeploy": "ng build --prod"
   },
   "pre-commit": [],
   "private": true,
@@ -57,6 +60,7 @@
     "codelyzer": "^4.0.2",
     "cpy-cli": "^1.0.1",
     "express": "^4.15.2",
+    "gh-pages": "^1.2.0",
     "http-server": "^0.10.0",
     "pre-commit": "^1.2.2",
     "reflect-metadata": "^0.1.10",

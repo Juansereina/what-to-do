@@ -54,7 +54,7 @@ const MY_MOMENT_FORMATS = {
   ],
   imports: [
 BrowserModule.withServerTransition({ appId: 'my-app' }),
-    RouterModule.forRoot(routes),
+    RouterModule.forRoot(routes, {useHash: true}),
     TransferHttpCacheModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
